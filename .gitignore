@@ -1,0 +1,9 @@
+# outputs of every script (measurements, Gram dumps, prompt caches, tables, figures)
+results/
+# experiment.py writes ./results.json when run without --output
+/results*.json
+# Gram dumps are never committed
+*.npz
+__pycache__/
+*.pyc
+.venv/

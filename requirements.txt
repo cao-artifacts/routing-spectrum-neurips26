@@ -1,0 +1,27 @@
+# Direct dependencies. Python 3.11 or 3.12 (both tested); numpy 1.26.3 and
+# torch 2.4.1 have no wheels for Python 3.13 or newer.
+#
+# The Appendix H measurements recorded the versions of torch, transformers,
+# datasets, accelerate, bitsandbytes, huggingface_hub and numpy below in their run
+# metadata (Python 3.11.10, CUDA 12.4, NVIDIA H100 80GB). They and the Appendix I
+# perplexity runs used the CUDA 12.4 build of PyTorch:
+#   pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+# For the CPU checks, install the CPU build first instead:
+#   pip install torch==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+# constraints.txt pins every other package to the environment in which the CPU
+# checks were run:
+#   pip install -r requirements.txt -c constraints.txt
+torch==2.4.1
+transformers==4.57.6
+datasets==5.0.0
+accelerate==1.14.0
+bitsandbytes==0.45.5
+huggingface_hub==0.36.2
+numpy==1.26.3
+# Installed by datasets; pyarrow 26.0.0 and later refuse to import with NumPy < 2.
+pyarrow==25.0.1
+# Tokenizer of Mistral-7B-v0.3 (sentencepiece model, converted by transformers).
+sentencepiece==0.2.2
+protobuf==7.36.2
+# Figures (src/figures/plot_figures.py).
+matplotlib==3.10.8

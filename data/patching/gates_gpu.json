@@ -1,0 +1,190 @@
+{
+  "timestamp": "2026-07-24T23:45:22.743250+00:00",
+  "torch": "2.4.1+cu124",
+  "transformers": "4.57.6",
+  "rows": [
+    {
+      "gate": "vii-window-accounting",
+      "model": "ppl-accounting",
+      "status": "PASS",
+      "detail": "n=2048,w=512,s=512 -> 4 windows, 2044 scored tokens (expect 4/2044)"
+    },
+    {
+      "gate": "vii-b-overlap-accounting",
+      "model": "ppl-accounting",
+      "status": "PASS",
+      "detail": "n=1000,w=512,s=256 -> [(0, 512, 1), (256, 768, 256), (512, 1000, 256)] scored=999 (expect 999)"
+    },
+    {
+      "gate": "i-identity-nll",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "max|dNLL|=0.000e+00 over 93 tokens, bit_exact=True"
+    },
+    {
+      "gate": "v-non-vacuity",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "max|dNLL| vs unpatched = 1.891e-03 (must be > 0; a no-op patch would read 0)"
+    },
+    {
+      "gate": "ii-vs-reference-logits",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "max|dlogit|=0.000e+00 (|logit|max=0.450), phi=all->head0"
+    },
+    {
+      "gate": "ii-b-attn-maps-are-reps",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "all heads == head0 rows / head0 unchanged: L0:True/True L1:True/True"
+    },
+    {
+      "gate": "iii-causal-and-stochastic",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "L0:nan=False,rowerr=1.19e-07,upper=0.0e+00 L1:nan=False,rowerr=1.19e-07,upper=0.0e+00"
+    },
+    {
+      "gate": "iv-gqa-indexing",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "H_q=8,H_kv=2,n_rep=4 | L0:shape=True,order=True,num=True,vperm_differs=True L1:shape=True,order=True,num=True,vperm_differs=True"
+    },
+    {
+      "gate": "vi-patchmode-equivalence",
+      "model": "synthetic-gqa-llama(H8/KV2)",
+      "status": "PASS",
+      "detail": "registry vs module_global max|dNLL|=0.000e+00"
+    },
+    {
+      "gate": "i-identity-nll",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "max|dNLL|=0.000e+00 over 93 tokens, bit_exact=True"
+    },
+    {
+      "gate": "v-non-vacuity",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "max|dNLL| vs unpatched = 3.471e-04 (must be > 0; a no-op patch would read 0)"
+    },
+    {
+      "gate": "ii-vs-reference-logits",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "max|dlogit|=0.000e+00 (|logit|max=0.395), phi=all->head0"
+    },
+    {
+      "gate": "ii-b-attn-maps-are-reps",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "all heads == head0 rows / head0 unchanged: L0:True/True L1:True/True"
+    },
+    {
+      "gate": "iii-causal-and-stochastic",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "L0:nan=False,rowerr=1.19e-07,upper=0.0e+00 L1:nan=False,rowerr=1.19e-07,upper=0.0e+00"
+    },
+    {
+      "gate": "iv-gqa-indexing",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "N/A",
+      "detail": "model is MHA (H_q=H_kv=4); gate iv is exercised on the GQA models instead"
+    },
+    {
+      "gate": "vi-patchmode-equivalence",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "registry vs module_global max|dNLL|=0.000e+00"
+    },
+    {
+      "gate": "i-identity-nll",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "max|dNLL|=0.000e+00 over 93 tokens, bit_exact=True"
+    },
+    {
+      "gate": "v-non-vacuity",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "max|dNLL| vs unpatched = 3.239e-02 (must be > 0; a no-op patch would read 0)"
+    },
+    {
+      "gate": "ii-vs-reference-logits",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "max|dlogit|=0.000e+00 (|logit|max=0.040), phi=all->head0"
+    },
+    {
+      "gate": "ii-b-attn-maps-are-reps",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "all heads == head0 rows / head0 unchanged: L0:True/True L1:True/True"
+    },
+    {
+      "gate": "iii-causal-and-stochastic",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "L0:nan=False,rowerr=1.19e-07,upper=0.0e+00 L1:nan=False,rowerr=2.38e-07,upper=0.0e+00"
+    },
+    {
+      "gate": "iv-gqa-indexing",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "H_q=4,H_kv=2,n_rep=2 | L0:shape=True,order=True,num=True,vperm_differs=True L1:shape=True,order=True,num=True,vperm_differs=True"
+    },
+    {
+      "gate": "vi-patchmode-equivalence",
+      "model": "tiny-Qwen3ForCausalLM",
+      "status": "PASS",
+      "detail": "registry vs module_global max|dNLL|=0.000e+00"
+    },
+    {
+      "gate": "x-negative-control",
+      "model": "permute-values-too",
+      "status": "PASS",
+      "detail": "caught by ['ii-vs-reference-logits', 'iv-gqa-indexing', 'vi-patchmode-equivalence']"
+    },
+    {
+      "gate": "x-negative-control",
+      "model": "permute-wrong-axis",
+      "status": "PASS",
+      "detail": "caught by ['ii-b-attn-maps-are-reps', 'ii-vs-reference-logits', 'iv-gqa-indexing', 'vi-patchmode-equivalence']"
+    },
+    {
+      "gate": "x-negative-control",
+      "model": "inverse-map-scatter",
+      "status": "PASS",
+      "detail": "caught by ['ii-b-attn-maps-are-reps', 'ii-vs-reference-logits', 'iv-gqa-indexing', 'vi-patchmode-equivalence']"
+    },
+    {
+      "gate": "x-negative-control",
+      "model": "permute-pre-softmax",
+      "status": "PASS",
+      "detail": "caught by ['ii-b-attn-maps-are-reps', 'iv-gqa-indexing']"
+    },
+    {
+      "gate": "x-negative-control",
+      "model": "unregistered-causal-mask",
+      "status": "PASS",
+      "detail": "caught by ['i-identity-nll', 'ii-vs-reference-logits', 'iii-causal-and-stochastic', 'vi-patchmode-equivalence']"
+    },
+    {
+      "gate": "viii-end-to-end-ppl",
+      "model": "tiny-random-LlamaForCausalLM",
+      "status": "PASS",
+      "detail": "ppl=33422.775 tokens=2044 windows=4 (random-init model, value meaningless)"
+    },
+    {
+      "gate": "ix-wikitext2-load",
+      "model": "wikitext-2-raw-v1/test",
+      "status": "PASS",
+      "detail": "1294336 chars"
+    }
+  ],
+  "n_fail": 0,
+  "n_skip": 0,
+  "n_na": 1
+}
